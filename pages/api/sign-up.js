@@ -11,8 +11,11 @@ export default async function handler(req, res) {
     // Sends a HTTP bad request error code.
     return res.status(400).json({
       error: "Email not found",
+      body: body
     });
   }
+
+  // res.status(200).json({ email: body.email })
 
   // Here, you could send the email address to a service like Mailchimp to
   // manage your mailing list.
