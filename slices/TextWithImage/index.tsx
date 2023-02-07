@@ -1,11 +1,16 @@
-import { PrismicRichText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
-import * as prismicH from "@prismicio/helpers";
+import { PrismicRichText } from '@prismicio/react'
+import { PrismicNextImage } from '@prismicio/next'
+import * as prismicH from '@prismicio/helpers'
 
-import { Bounded } from "../../components/Bounded";
-import { Heading } from "../../components/Heading";
+import { Bounded } from '../../components/Bounded'
+import { Heading } from '../../components/Heading'
 
-const TextWithImage = ({ slice }) => {
+import type { Content } from '@prismicio/client'
+import type { SliceComponentProps } from '@prismicio/react'
+
+export type TextWithImageProps = SliceComponentProps<Content.TextWithImageSlice>
+
+const TextWithImage = ({ slice }: TextWithImageProps) => {
   return (
     <Bounded as="section" className="bg-white">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16 lg:gap-28">
@@ -40,7 +45,7 @@ const TextWithImage = ({ slice }) => {
         </div>
       </div>
     </Bounded>
-  );
-};
+  )
+}
 
-export default TextWithImage;
+export default TextWithImage

@@ -1,11 +1,17 @@
-import { PrismicRichText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
-import * as prismicH from "@prismicio/helpers";
+import { PrismicRichText } from '@prismicio/react'
+import { PrismicNextImage } from '@prismicio/next'
+import * as prismicH from '@prismicio/helpers'
 
-import { Bounded } from "../../components/Bounded";
-import { Heading } from "../../components/Heading";
+import { Bounded } from '../../components/Bounded'
+import { Heading } from '../../components/Heading'
 
-const TextWithFeatures = ({ slice }) => {
+import type { Content } from '@prismicio/client'
+import type { SliceComponentProps } from '@prismicio/react'
+
+export type TextWithFeaturesProps =
+  SliceComponentProps<Content.TextWithFeaturesSlice>
+
+const TextWithFeatures = ({ slice }: TextWithFeaturesProps) => {
   return (
     <Bounded collapsible={false} as="section" className="bg-slate-100">
       <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-2 md:gap-10 lg:gap-28">
@@ -52,7 +58,7 @@ const TextWithFeatures = ({ slice }) => {
         </ul>
       </div>
     </Bounded>
-  );
-};
+  )
+}
 
-export default TextWithFeatures;
+export default TextWithFeatures

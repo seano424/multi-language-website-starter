@@ -1,16 +1,21 @@
-import { PrismicNextImage } from "@prismicio/next";
-import * as prismicH from "@prismicio/helpers";
-import clsx from "clsx";
+import { PrismicNextImage } from '@prismicio/next'
+import * as prismicH from '@prismicio/helpers'
+import clsx from 'clsx'
 
-import { Bounded } from "../../components/Bounded";
+import { Bounded } from '../../components/Bounded'
 
-const Image = ({ slice }) => {
+import type { Content } from '@prismicio/client'
+import type { SliceComponentProps } from '@prismicio/react'
+
+export type ImageProps = SliceComponentProps<Content.ImageSlice>
+
+const Image = ({ slice }: ImageProps) => {
   return (
     <Bounded
       as="section"
       className={clsx(
-        slice.variation === "lightSlate" && "bg-slate-100",
-        slice.variation === "white" && "bg-white"
+        slice.variation === 'lightSlate' && 'bg-slate-100',
+        slice.variation === 'white' && 'bg-white'
       )}
     >
       <div className="relative">
@@ -28,7 +33,7 @@ const Image = ({ slice }) => {
         )}
       </div>
     </Bounded>
-  );
-};
+  )
+}
 
-export default Image;
+export default Image

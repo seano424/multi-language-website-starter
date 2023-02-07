@@ -1,12 +1,15 @@
-import React from 'react'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import type { Content } from '@prismicio/client'
+import type { SliceComponentProps } from '@prismicio/react'
+
+export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>
 
 /**
  * @typedef {import("@prismicio/client").Content.CallToActionSlice} CallToActionSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<CallToActionSlice>} CallToActionProps
  * @param { CallToActionProps }
  */
-const CallToAction = ({ slice }) => (
+const CallToAction = ({ slice }: CallToActionProps) => (
   <section className="my-16 mx-auto flex max-w-xl flex-col gap-3 text-center">
     <span className="text-3xl font-black">
       {slice.primary.title ? (

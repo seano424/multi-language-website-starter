@@ -5,7 +5,12 @@ import * as prismicH from '@prismicio/helpers'
 import { Bounded } from '../../components/Bounded'
 import { Heading } from '../../components/Heading'
 
-const Hero = ({ slice }) => {
+import type { Content } from '@prismicio/client'
+import type { SliceComponentProps } from '@prismicio/react'
+
+export type HeroProps = SliceComponentProps<Content.HeroSlice>
+
+const Hero = ({ slice }: HeroProps) => {
   return (
     <Bounded as="section" collapsible={false} className="bg-white pb-0 md:pb-0">
       <div className="grid grid-cols-1 justify-items-center gap-10">
@@ -24,7 +29,8 @@ const Hero = ({ slice }) => {
             }}
           />
         </div>
-        {prismicH.isFilled.link(slice.primary.buttonLink) &&
+        {slice.variation === 'withButton' &&
+          prismicH.isFilled.link(slice.primary.buttonLink) &&
           prismicH.isFilled.keyText(slice.primary.buttonText) && (
             <PrismicLink
               field={slice.primary.buttonLink}
