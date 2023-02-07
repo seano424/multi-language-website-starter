@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-import type { Content } from '@prismicio/client'
-
 import { SliceZone } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
 
@@ -9,7 +7,7 @@ import { createClient } from '../prismicio'
 import { components } from '../slices'
 import { Layout } from '../components/Layout'
 
-const Index = ({
+const Page = ({
   page,
   navigation,
   settings,
@@ -21,32 +19,28 @@ const Index = ({
       settings={settings}
     >
       <Head>
-        <title>{prismicH.asText(page.data.title)}</title>
+        <title>
+          {prismicH.asText(page.data.title)} |{' '}
+          {prismicH.asText(settings.data.siteTitle)}
+        </title>
       </Head>
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   )
 }
 
-export default Index
+export default Page
 
 export async function getStaticProps({
+  params,
   locale,
   previewData,
 }: GetStaticPropsContext) {
   const client = createClient({ previewData })
-
-  const page = await client.getByUID<Content.PageDocument>('page', 'home', {
-    lang: locale,
-  })
-  const navigation = await client.getSingle<Content.NavigationDocument>(
-    'navigation',
-    { lang: locale }
-  )
-  const settings = await client.getSingle<Content.SettingsDocument>(
-    'settings',
-    { lang: locale }
-  )
+  const uid = typeof params.uid === 'string' ? params.uid : params.uid[0]
+  const page = await client.getByUID('page', uid, { lang: locale })
+  const navigation = await client.getSingle('navigation', { lang: locale })
+  const settings = await client.getSingle('settings', { lang: locale })
 
   return {
     props: {
@@ -54,5 +48,21 @@ export async function getStaticProps({
       navigation,
       settings,
     },
+  }
+}
+
+export async function getStaticPaths() {
+  const client = createClient()
+
+  const pages = await client.getAllByType('page', { lang: '*' })
+
+  return {
+    paths: pages.map((page) => {
+      return {
+        params: { uid: page.uid },
+        locale: page.lang,
+      }
+    }),
+    fallback: false,
   }
 }
