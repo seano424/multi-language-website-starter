@@ -9,8 +9,10 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Bottom"
-            }
+              "text": "Heading Text",
+              "spans": []
+            },
+            "direction": "ltr"
           }
         ]
       },
@@ -34,8 +36,8 @@
       },
       "link_label": {
         "__TYPE__": "FieldContent",
-        "value": "mud",
-        "type": "Text"
+        "type": "Text",
+        "value": "Link"
       }
     },
     "items": [

@@ -7,8 +7,8 @@ import { PrismicRichText, PrismicLink } from '@prismicio/react'
  * @param { CallToActionProps }
  */
 const CallToAction = ({ slice }) => (
-  <section className="my-16 mx-auto max-w-xl text-center">
-    <span className="text-blue-900">
+  <section className="my-16 mx-auto flex max-w-xl flex-col gap-3 text-center">
+    <span className="text-3xl font-black">
       {slice.primary.title ? (
         <PrismicRichText field={slice.primary.title} />
       ) : (
@@ -21,7 +21,10 @@ const CallToAction = ({ slice }) => (
       <p>start by editing this slice from inside Slice Machine!</p>
     )}
     {slice.primary.link && (
-      <PrismicLink className="text-purple-900" field={slice.primary.link}>
+      <PrismicLink
+        className="mx-auto w-max rounded-full border-4 px-4 py-2"
+        field={slice.primary.link}
+      >
         {slice.primary.link_label ? (
           <span>{slice.primary.link_label}</span>
         ) : (
