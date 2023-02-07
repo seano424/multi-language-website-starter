@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { AppProps } from 'next/app'
 import { PrismicLink, PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
 
@@ -38,10 +39,10 @@ const richTextComponents = {
   ),
 }
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <PrismicProvider
-      internalLinkComponent={Link}
+      internalLinkComponent={(props) => <Link {...props} />}
       linkResolver={linkResolver}
       richTextComponents={richTextComponents}
     >
