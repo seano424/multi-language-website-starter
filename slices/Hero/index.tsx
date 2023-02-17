@@ -17,56 +17,85 @@ const Hero = ({ slice }: HeroProps) => {
       <div className="grid grid-cols-1 justify-items-center gap-10">
         <div className="border border-white leading-relaxed">
           {slice.variation === 'default' ? (
-            <div>
-              <PrismicRichText
-                field={slice.primary.heading}
-                components={{
-                  heading1: ({ children }) => (
-                    <Heading className={clsx('mb-6 text-white last:mb-0')}>
-                      {children}
-                    </Heading>
-                  ),
-                  paragraph: ({ children }) => (
-                    <p className={clsx('mb-6 text-white last:mb-0')}>
-                      {children}
-                    </p>
-                  ),
-                }}
-              />
-
-              <PrismicRichText
-                field={slice.primary.subheading}
-                components={{
-                  heading2: ({ children }) => (
-                    <Heading
-                      size="h2"
-                      className={clsx(
-                        'mb-6 text-white last:mb-0',
-                        slice.primary.subheading[0].direction === 'rtl' &&
-                          'text-right'
-                      )}
-                    >
-                      {children}
-                    </Heading>
-                  ),
-                  heading3: ({ children }) => (
-                    <Heading
-                      size="h3"
-                      className={clsx(
-                        'mb-6 text-white last:mb-0',
-                        slice.primary.subheading[0].direction === 'rtl' &&
-                          'text-right'
-                      )}
-                    >
-                      {children}
-                    </Heading>
-                  ),
-                  paragraph: ({ children }) => (
-                    <p className="mb-6 last:mb-0">{children}</p>
-                  ),
-                }}
-              />
-            </div>
+            <>
+              {slice.primary.heading && (
+                <PrismicRichText
+                  field={slice.primary.heading}
+                  components={{
+                    heading1: ({ children }) => (
+                      <Heading className={clsx('mb-6 text-white last:mb-0')}>
+                        {children}
+                      </Heading>
+                    ),
+                  }}
+                />
+              )}
+              {slice.primary.subheading && (
+                <>
+                  {prismicH.asText(slice.primary.subheading) ? (
+                    <PrismicRichText
+                      field={slice.primary.subheading}
+                      components={{
+                        heading2: ({ children }) => (
+                          <Heading
+                            size="h2"
+                            className={clsx(
+                              'mb-6 text-white last:mb-0',
+                              slice.primary.subheading[0].type ===
+                                'preformatted' && 'text-right'
+                            )}
+                          >
+                            {children}
+                          </Heading>
+                        ),
+                        heading3: ({ children }) => (
+                          <Heading
+                            size="h3"
+                            className={clsx(
+                              'mb-6 text-white last:mb-0',
+                              slice.primary.subheading[0].direction &&
+                                'text-right'
+                            )}
+                          >
+                            {children}
+                          </Heading>
+                        ),
+                      }}
+                    />
+                  ) : (
+                    <PrismicRichText
+                      field={slice.primary.subheading}
+                      components={{
+                        heading2: ({ children }) => (
+                          <Heading
+                            size="h2"
+                            className={clsx(
+                              'mb-6 text-white last:mb-0',
+                              slice.primary.subheading[0].direction &&
+                                'text-right'
+                            )}
+                          >
+                            {children}
+                          </Heading>
+                        ),
+                        heading3: ({ children }) => (
+                          <Heading
+                            size="h3"
+                            className={clsx(
+                              'mb-6 text-white last:mb-0',
+                              slice.primary.subheading[0].direction &&
+                                'text-right'
+                            )}
+                          >
+                            {children}
+                          </Heading>
+                        ),
+                      }}
+                    />
+                  )}
+                </>
+              )}
+            </>
           ) : (
             <PrismicRichText
               field={slice.primary.text}
@@ -96,6 +125,7 @@ const Hero = ({ slice }: HeroProps) => {
         {prismicH.isFilled.image(slice.primary.image) && (
           <div className="w-full">
             <PrismicNextImage
+              alt={slice.primary.image.alt ?? 'Hero Image'}
               field={slice.primary.image}
               sizes="100vw"
               className="w-full"

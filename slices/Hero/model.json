@@ -17,7 +17,7 @@
             "label": "Heading",
             "placeholder": "Introductory text for the page",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1,strong,hyperlink,em"
+            "multi": "heading1"
           }
         },
         "subheading": {
@@ -26,7 +26,7 @@
             "label": "Subheading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "heading2,heading3,rtl"
           }
         },
         "image": {
