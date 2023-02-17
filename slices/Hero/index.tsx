@@ -1,6 +1,7 @@
 import { PrismicLink, PrismicRichText } from '@prismicio/react'
 import { PrismicNextImage } from '@prismicio/next'
 import * as prismicH from '@prismicio/helpers'
+import clsx from 'clsx'
 
 import { Bounded } from '../../components/Bounded'
 import { Heading } from '../../components/Heading'
@@ -21,20 +22,42 @@ const Hero = ({ slice }: HeroProps) => {
                 field={slice.primary.heading}
                 components={{
                   heading1: ({ children }) => (
-                    <Heading size="h1" className="mb-6 text-white last:mb-0">
+                    <Heading className={clsx('mb-6 text-white last:mb-0')}>
                       {children}
                     </Heading>
                   ),
                   paragraph: ({ children }) => (
-                    <p className="mb-6 text-white last:mb-0">{children}</p>
+                    <p className={clsx('mb-6 text-white last:mb-0')}>
+                      {children}
+                    </p>
                   ),
                 }}
               />
+
               <PrismicRichText
                 field={slice.primary.subheading}
                 components={{
                   heading2: ({ children }) => (
-                    <Heading size="h2" className="mb-6 text-white last:mb-0">
+                    <Heading
+                      size="h2"
+                      className={clsx(
+                        'mb-6 text-white last:mb-0',
+                        slice.primary.subheading[0].direction === 'rtl' &&
+                          'text-right'
+                      )}
+                    >
+                      {children}
+                    </Heading>
+                  ),
+                  heading3: ({ children }) => (
+                    <Heading
+                      size="h3"
+                      className={clsx(
+                        'mb-6 text-white last:mb-0',
+                        slice.primary.subheading[0].direction === 'rtl' &&
+                          'text-right'
+                      )}
+                    >
                       {children}
                     </Heading>
                   ),
@@ -49,7 +72,7 @@ const Hero = ({ slice }: HeroProps) => {
               field={slice.primary.text}
               components={{
                 heading1: ({ children }) => (
-                  <Heading className="mb-6 text-white last:mb-0">
+                  <Heading className={clsx('mb-6 text-white last:mb-0')}>
                     {children}
                   </Heading>
                 ),
