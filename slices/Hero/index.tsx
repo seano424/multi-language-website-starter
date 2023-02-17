@@ -13,7 +13,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>
 
 const Hero = ({ slice }: HeroProps) => {
   return (
-    <Bounded as="section" collapsible={false} className="pb-0 md:pb-0">
+    <section className="container">
       <div className="grid grid-cols-1 justify-items-center gap-10">
         <div className="border border-white leading-relaxed">
           {slice.variation === 'default' ? (
@@ -97,7 +97,7 @@ const Hero = ({ slice }: HeroProps) => {
           </div>
         )}
       </div>
-    </Bounded>
+    </section>
   )
 }
 
