@@ -26,7 +26,7 @@
             "label": "Subheading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2"
+            "multi": "heading2,paragraph"
           }
         },
         "image": {

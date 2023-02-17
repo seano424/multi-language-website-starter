@@ -241,13 +241,13 @@ interface HeroSliceDefaultPrimary {
     /**
      * Subheading field in *Hero → Primary*
      *
-     * - **Field Type**: Title
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
      * - **API ID Path**: hero.primary.subheading
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    subheading: prismicT.TitleField;
+    subheading: prismicT.RichTextField;
     /**
      * Image field in *Hero → Primary*
      *
