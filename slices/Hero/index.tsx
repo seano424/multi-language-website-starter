@@ -15,7 +15,7 @@ const Hero = ({ slice }: HeroProps) => {
     <Bounded as="section" collapsible={false} className="bg-white pb-0 md:pb-0">
       <div className="grid grid-cols-1 justify-items-center gap-10">
         <div className="max-w-2xl text-center leading-relaxed">
-          <PrismicRichText
+          {/* <PrismicRichText
             field={slice.primary.text}
             components={{
               heading1: ({ children }) => (
@@ -27,7 +27,7 @@ const Hero = ({ slice }: HeroProps) => {
                 <p className="mb-6 last:mb-0">{children}</p>
               ),
             }}
-          />
+          /> */}
         </div>
         {slice.variation === 'withButton' &&
           prismicH.isFilled.link(slice.primary.buttonLink) &&
