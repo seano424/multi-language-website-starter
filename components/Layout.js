@@ -1,5 +1,5 @@
-import { Header } from "./Header";
-import { Footer } from "./Footer";
+import { Header } from './Header'
+import { Footer } from './Footer'
 
 export const Layout = ({
   alternateLanguages,
@@ -8,14 +8,14 @@ export const Layout = ({
   children,
 }) => {
   return (
-    <div className="text-slate-800">
+    <div className="flex min-h-screen flex-col bg-primary-dark text-slate-800">
       <Header
         alternateLanguages={alternateLanguages}
         navigation={navigation}
         settings={settings}
       />
       <main>{children}</main>
-      <Footer settings={settings} />
+      {/* <Footer settings={settings} /> */}
     </div>
-  );
-};
+  )
+}
