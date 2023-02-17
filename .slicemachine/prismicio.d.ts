@@ -229,15 +229,25 @@ export type CallToActionSlice = prismicT.SharedSlice<"call_to_action", CallToAct
  */
 interface HeroSliceDefaultPrimary {
     /**
-     * Text field in *Hero → Primary*
+     * Heading field in *Hero → Primary*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: Introductory text for the page
-     * - **API ID Path**: hero.primary.text
+     * - **API ID Path**: hero.primary.heading
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    text: prismicT.RichTextField;
+    heading: prismicT.RichTextField;
+    /**
+     * Subheading field in *Hero → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.subheading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    subheading: prismicT.TitleField;
     /**
      * Image field in *Hero → Primary*
      *

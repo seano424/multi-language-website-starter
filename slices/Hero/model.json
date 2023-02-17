@@ -11,13 +11,22 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Hero",
       "primary": {
-        "text": {
+        "heading": {
           "type": "StructuredText",
           "config": {
-            "label": "Text",
+            "label": "Heading",
             "placeholder": "Introductory text for the page",
             "allowTargetBlank": true,
-            "multi": "paragraph,em,strong,heading1,hyperlink"
+            "multi": "paragraph,heading1,strong,hyperlink,em"
+          }
+        },
+        "subheading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subheading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         },
         "image": {

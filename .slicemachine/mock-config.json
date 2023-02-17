@@ -120,9 +120,15 @@
     "Hero": {
       "default": {
         "primary": {
-          "text": {
+          "heading": {
             "config": {
               "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "subheading": {
+            "config": {
+              "patternType": "HEADING",
               "blocks": 1
             }
           }
