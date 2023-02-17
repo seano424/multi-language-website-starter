@@ -7,21 +7,21 @@ interface HeadingProps {
 }
 
 export const Heading = ({
-  size: Comp = 'h1',
+  size: Element = 'h1',
   children,
   className,
 }: HeadingProps) => {
   return (
-    <Comp
+    <Element
       className={clsx(
         'font-semibold tracking-tighter',
-        Comp === 'h1' && 'text-5xl md:text-[5rem]',
-        Comp === 'h2' && 'text-4xl md:text-6xl',
-        Comp === 'h3' && 'text-2xl',
+        Element === 'h1' && 'text-5xl md:text-[5rem]',
+        Element === 'h2' && 'text-4xl md:text-6xl',
+        Element === 'h3' && 'text-2xl',
         className
       )}
     >
       {children}
-    </Comp>
+    </Element>
   )
 }
