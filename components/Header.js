@@ -13,7 +13,7 @@ const FlagIcon = ({ lang }) => {
 
 export const Header = ({ alternateLanguages = [], navigation, settings }) => {
   return (
-    <Bounded as="header" yPadding="sm">
+    <header className="py-8 px-28">
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none text-white">
         {/* <PrismicLink href="/">
           {prismicH.isFilled.image(settings.data.logo) && (
@@ -46,6 +46,6 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
           </ul>
         </nav>
       </div>
-    </Bounded>
+    </header>
   )
 }

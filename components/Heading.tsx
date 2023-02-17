@@ -14,7 +14,7 @@ export const Heading = ({
   return (
     <Element
       className={clsx(
-        'font-semibold tracking-tighter',
+        'tracking-tighter',
         Element === 'h1' && 'text-5xl md:text-7xl',
         Element === 'h2' && 'text-3xl md:text-5xl',
         Element === 'h3' && 'text-2xl md:text-4xl',

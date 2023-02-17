@@ -14,7 +14,7 @@ const Hero = ({ slice }: HeroProps) => {
   return (
     <section className="py-base container">
       <div className="grid grid-cols-1 justify-items-center gap-10">
-        <div className="border border-white leading-relaxed">
+        <div className="leading-relaxed">
           {slice.variation === 'default' ? (
             <>
               {slice.primary.heading && (
@@ -37,7 +37,7 @@ const Hero = ({ slice }: HeroProps) => {
                       <Heading
                         size="h2"
                         className={clsx(
-                          'mb-6 text-white last:mb-0',
+                          'mb-6 text-slate-500 last:mb-0',
                           slice.primary.subheading[0].direction && 'text-right'
                         )}
                       >
@@ -48,7 +48,7 @@ const Hero = ({ slice }: HeroProps) => {
                       <Heading
                         size="h3"
                         className={clsx(
-                          'mb-6 text-white last:mb-0',
+                          'mb-6 text-slate-500 last:mb-0',
                           slice.primary.subheading[0].direction && 'text-right'
                         )}
                       >
@@ -86,12 +86,12 @@ const Hero = ({ slice }: HeroProps) => {
             </PrismicLink>
           )}
         {prismicH.isFilled.image(slice.primary.image) && (
-          <div className="w-full">
+          <div className="w-full py-base">
             <PrismicNextImage
               alt={slice.primary.image.alt ?? 'Hero Image'}
               field={slice.primary.image}
               sizes="100vw"
-              className="w-full"
+              className="w-full rounded-3xl"
             />
           </div>
         )}
