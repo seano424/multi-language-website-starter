@@ -3,7 +3,6 @@ import { PrismicNextImage } from '@prismicio/next'
 import * as prismicH from '@prismicio/helpers'
 import clsx from 'clsx'
 
-import { Bounded } from '../../components/Bounded'
 import { Heading } from '../../components/Heading'
 
 import type { Content } from '@prismicio/client'
