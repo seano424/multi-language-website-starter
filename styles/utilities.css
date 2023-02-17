@@ -1,0 +1,5 @@
+@layer utilities {
+  .py-base {
+    @apply py-10 md:py-16;
+  }
+}

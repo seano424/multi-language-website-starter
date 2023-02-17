@@ -12,7 +12,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>
 
 const Hero = ({ slice }: HeroProps) => {
   return (
-    <section className="container">
+    <section className="py-base container">
       <div className="grid grid-cols-1 justify-items-center gap-10">
         <div className="border border-white leading-relaxed">
           {slice.variation === 'default' ? (
