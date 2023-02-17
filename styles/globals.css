@@ -9,7 +9,3 @@
   + [data-collapsible='true'].bg-slate-100 {
   @apply pt-0 md:pt-0;
 }
-
-.h1 {
-  @apply text-4xl lg:text-6xl;
-}

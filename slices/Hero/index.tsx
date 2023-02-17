@@ -21,7 +21,9 @@ const Hero = ({ slice }: HeroProps) => {
                 field={slice.primary.heading}
                 components={{
                   heading1: ({ children }) => (
-                    <h1 className="h1 mb-6 text-white last:mb-0">{children}</h1>
+                    <Heading size="h1" className="mb-6 text-white last:mb-0">
+                      {children}
+                    </Heading>
                   ),
                   paragraph: ({ children }) => (
                     <p className="mb-6 text-white last:mb-0">{children}</p>
@@ -31,13 +33,8 @@ const Hero = ({ slice }: HeroProps) => {
               <PrismicRichText
                 field={slice.primary.subheading}
                 components={{
-                  heading1: ({ children }) => (
-                    <Heading className="mb-6 text-white last:mb-0">
-                      {children}
-                    </Heading>
-                  ),
                   heading2: ({ children }) => (
-                    <Heading size="2xl" className="mb-6 text-white last:mb-0">
+                    <Heading size="h2" className="mb-6 text-white last:mb-0">
                       {children}
                     </Heading>
                   ),

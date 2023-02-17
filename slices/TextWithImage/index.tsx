@@ -31,12 +31,12 @@ const TextWithImage = ({ slice }: TextWithImageProps) => {
             field={slice.primary.text}
             components={{
               heading1: ({ children }) => (
-                <Heading as="h2" size="6xl" className="mb-8 last:mb-0">
+                <Heading size="h1" className="mb-8 last:mb-0">
                   {children}
                 </Heading>
               ),
               heading2: ({ children }) => (
-                <Heading as="h3" size="2xl" className="mb-2 last:mb-0">
+                <Heading size="h3" className="mb-2 last:mb-0">
                   {children}
                 </Heading>
               ),
